@@ -1,4 +1,9 @@
 {
 "games":
-[{"name": "BlackList", "url": "youwillneverknow.com"}]
+[
+{
+"name": "BlackList",
+"url": "youwillneverknow.com"
+}
+]
 }
