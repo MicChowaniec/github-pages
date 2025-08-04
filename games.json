@@ -1,0 +1,6 @@
+{
+  "games": [
+    { "source": "Epic Games", "title": "Death Stranding", "until": "10 sierpnia" },
+    { "source": "GOG", "title": "Fallout 1", "until": "na zawsze" }
+  ]
+}
