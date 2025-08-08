@@ -1,4 +1,4 @@
-{
-{"name": "BlackList", "url": "youwillneverknow.com"},
-{"name": "BlackList2", "url": "youwillneverknow2.com"}
-}
+[
+  { "name": "BlackList", "url": "youwillneverknow.com" },
+  { "name": "BlackList2", "url": "youwillneverknow2.com" }
+]
