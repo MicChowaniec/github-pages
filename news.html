@@ -7,8 +7,46 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>📰 Aktualności</h1>
-  <p>Tu pojawią się artykuły i newsy.</p>
-  <footer><a href="index.html">⬅ Powrót</a></footer>
+  <h1>Aktualności</h1>
+  <ul id="news"></ul>
+
+<script>
+  async function loadNews() {
+    try {
+      const res = await fetch('news.json');
+      if (!res.ok) throw new Error('Błąd ładowania pliku news.json');
+      const data = await res.json();
+
+      const list = document.getElementById("news");
+      list.innerHTML = '';
+
+      data.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+
+      data.forEach(article => {
+        let url = article.url;
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+          url = 'https://' + url;
+        }
+
+        const li = document.createElement("li");
+        li.classList.add("game-card");
+
+        li.innerHTML = `
+          <a href="${url}" target="_blank" rel="noopener noreferrer">
+            <img src="${article.image}" alt="${article.name}" loading="lazy">
+            <span>${article.name}</span>
+          </a>
+        `;
+        list.appendChild(li);
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  loadNews();
+</script>
+
+  <footer><a href="index.html">Powrót</a></footer>
 </body>
 </html>
